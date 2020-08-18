@@ -12,4 +12,8 @@ Set up using create-react-app
 * `git clone` the repo
 * `cd` into credit_card_form
 * `npm install` to add npm to your local file
-* `npm start` to view credi_card_form on localhost:3000 
+* `npm start` to view credit_card_form on localhost:3000 
+
+## UI
+credit_card_form will follow this UI as a general guide. 
+![Screenshot](credit_card.png) 
