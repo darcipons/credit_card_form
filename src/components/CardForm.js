@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import { Button, Form, Col } from 'react-bootstrap';
+import CreditCard from './Card';
 import './CardForm.css';
 
 const CardForm = () => {
+  const months = ['Month', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  const years = ['Year', 2021, 2022, 2023, 2024, 2025];
+
   const initialInputState = { cardName: '', cardNumber: '' };
   const [input, setInput] = useState(initialInputState);
   const {cardName, cardNumber} = input;
@@ -11,15 +15,15 @@ const CardForm = () => {
     setInput({ ...input, [e.target.name]: e.target.value });
     console.log(input)
   };
-  
 
   return (
     <div className='card_form'>
+      <CreditCard input={input}/>
       <Form>
         <Form.Row>
           <Form.Group as={Col} controlId="formGridEmail">
             <Form.Label>Card Number</Form.Label>
-            <Form.Control type="password" name="cardNumber" onChange={handleInputChange} value={cardNumber}/>
+            <Form.Control type="text" name="cardNumber" onChange={handleInputChange} value={cardNumber}/>
           </Form.Group>
         </Form.Row>
 
@@ -43,15 +47,17 @@ const CardForm = () => {
         <Form.Row>
           <Form.Group as={Col} controlId="formGridState">
             <Form.Control as="select" defaultValue="Month">
-              <option>Month</option>
-              <option>Jan</option>
+              {
+                months.map(month => <option key={month}>{month}</option>)
+              }
             </Form.Control>
           </Form.Group>
 
           <Form.Group as={Col} controlId="formGridState">
             <Form.Control as="select" defaultValue="Year">
-              <option>Year</option>
-              <option>2020</option>
+              {
+                years.map(year => <option key={year}>{year}</option>)
+              }
             </Form.Control>
           </Form.Group>
 
