@@ -1,11 +1,12 @@
 import React from 'react';
+import CardForm from './components/CardForm';
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello World Beech</h1>
+      <CardForm />
     </div>
   );
-}
+};
 
 export default App;

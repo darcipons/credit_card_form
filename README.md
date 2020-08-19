@@ -7,6 +7,7 @@ Set up using create-react-app
 * JavaScript
 * React
 * CSS
+* Boostrap
 
 ### Setup Credit Card Form
 * `git clone` the repo
